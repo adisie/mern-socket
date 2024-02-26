@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* page font */
+@layer base {
+    .page-font {
+        @apply text-xs text-emerald-700 font-serif;
+    }
+}
+
+/* primary background */
+@layer components {
+    .primary-bg {
+        @apply bg-emerald-700 text-gray-300;
+    }
+    /* max-width for containers */
+    .primary-layout {
+        @apply max-w-[720px] mx-auto px-3;
+    }
+}
+
+/* btns */
+@layer components {
+    /* header btns */
+    .header-btns {
+        @apply bg-gray-300 text-emerald-700 px-3 py-[.13rem] rounded-sm border border-gray-300 ml-3 transition-all ease-out duration-300 hover:bg-emerald-700 hover:text-gray-300;
+    }
+    /* users btns */
+    .users-btns {
+        @apply w-full rounded-sm flex items-center justify-center py-[.215rem] cursor-pointer my-1 transition-all ease-in-out duration-300 hover:opacity-[.75]
+    }
+}
+
