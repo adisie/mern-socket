@@ -60,7 +60,7 @@ const Login = () => {
   return (
     <div className="flex-grow flex justify-center mt-7">
         {/* login form */}
-        <div className="border border-emerald-700 border-b-[16px] h-max p-5 flex flex-col items-center">
+        <div className="border border-emerald-700 border-b-[24px] h-max p-5 flex flex-col items-center">
             <div className="text-xl mb-3 font-bold">
                 <span>Login</span>
             </div>

@@ -32,3 +32,39 @@
     }
 }
 
+
+/* customizing side bars */
+/* users list */
+#chats-user-list::-webkit-scrollbar {
+    width: 3px;
+}
+
+#chats-user-list:hover::-webkit-scrollbar-track {
+    background-color: rgb(228, 228, 228);
+    border-radius: 3px;
+}
+
+#chats-user-list:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(169, 169, 169);
+    border-radius: 3px;
+}
+
+/* message-list-container */
+#message-list-container::-webkit-scrollbar {
+    width: 3px;
+}
+
+#message-list-container::-webkit-scrollbar-track {
+    background-color: rgb(228, 228, 228);
+    border-radius: 3px;
+}
+
+#message-list-container::-webkit-scrollbar-thumb {
+    background-color: rgb(169, 169, 169);
+    border-radius: 3px;
+}
+
+/* chat-message-text-area */
+#chat-message-text-area::-webkit-scrollbar {
+    display: none;
+}
