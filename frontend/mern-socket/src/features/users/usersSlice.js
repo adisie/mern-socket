@@ -8,6 +8,7 @@ const initialState = {
     usersDirection: 'LOGIN',
     isUserPending: false,
     user: userFromLocalStorage ? userFromLocalStorage : null,
+    users: [],
     errors: null,
 }
 
@@ -35,6 +36,16 @@ export const signup = createAsyncThunk('users/signup',async data => {
 export const logout = createAsyncThunk('users/logout',async () => {
     try{
         const response = await axios.get('/api/users/logout')
+        return response.data
+    }catch(err){
+        return err.response.data
+    }
+})
+
+// all  users
+export const getAllUsers = createAsyncThunk('users/getAllUsers',async () => {
+    try{
+        const response = await axios.get('/api/users/all-users')
         return response.data
     }catch(err){
         return err.response.data
@@ -115,6 +126,18 @@ const usersSlice = createSlice({
             .addCase(logout.rejected,state => {
                 console.log('user logout rejected case')
             })
+
+            // all users
+            // fulfilled case
+            .addCase(getAllUsers.fulfilled,(state,action)=> {
+                if(action.payload.users){
+                    state.users = action.payload.users
+                }
+            })
+            // rejected 
+            .addCase(getAllUsers.rejected,()=> {
+                console.log('get all users rejected case')
+            })
     },
 })
 
@@ -127,6 +150,8 @@ export const selectIsUserPending = state => state.users.isUserPending
 export const selectUser = state => state.users.user 
 // errors
 export const selectErrors = state => state.users.errors 
+// users
+export const selectUsers = state => state.users.users
 
 // exports
 // actions

@@ -109,7 +109,7 @@ const checkAuth = (req,res) => {
 const allUsers = async (req,res) => {
     try{
         const users = await User.find().select({_id: 1,username: 1}).sort({username: 1})
-        res.status(200).json(users)
+        res.status(200).json({users})
     }catch(err){
         res.status(200).json({
             error: 'get all users error'
